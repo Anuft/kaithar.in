@@ -1,0 +1,308 @@
+/* ==========================================================================
+   MINIMAL LUXURY COMING SOON — BURGUNDY SILK EDITORIAL
+   ========================================================================== */
+
+/* 1. Global Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --color-ivory: #FAF7F2;
+  --color-ivory-dim: rgba(250, 247, 242, 0.94);
+  --color-burgundy-deep: #20040A;
+  --color-burgundy-rich: #3b0914;
+  --color-oxblood: #540c1c;
+
+  /* Dynamic lighting coordinates (updated gently by JS) */
+  --light-x: 50%;
+  --light-y: 46%;
+  --light-intensity: 0.08;
+
+  /* Fluid typography */
+  --font-editorial: 'Montserrat', 'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --letter-spacing-base: 0.42em;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  background-color: var(--color-burgundy-deep);
+  color: var(--color-ivory);
+  font-family: var(--font-editorial);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+/* 2. Main Fullscreen Stage */
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-burgundy-deep);
+}
+
+/* 3. Silk Fabric Background Container */
+.fabric-container {
+  position: absolute;
+  top: -4%;
+  left: -4%;
+  width: 108%;
+  height: 108%;
+  overflow: hidden;
+  pointer-events: none;
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1.02);
+  animation: subtleFabricDrift 28s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.fabric-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.fabric-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+  display: block;
+  transform: translateZ(0);
+  image-rendering: auto;
+}
+
+/* 4. Cinematic Lighting & Editorial Vignette */
+.cinematic-lighting {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: soft-light;
+  background: radial-gradient(
+    ellipse 90% 85% at var(--light-x) var(--light-y),
+    rgba(255, 175, 185, calc(var(--light-intensity) * 1.5)) 0%,
+    rgba(140, 20, 45, 0.06) 40%,
+    rgba(35, 4, 10, 0.45) 75%,
+    rgba(12, 1, 3, 0.78) 100%
+  );
+  transition: opacity 1.2s ease-out;
+  animation: lightingBreathing 18s ease-in-out infinite alternate;
+}
+
+/* Second subtle vignette layer for high-end mood */
+.stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  background: radial-gradient(
+    circle at center,
+    transparent 55%,
+    rgba(16, 2, 5, 0.35) 85%,
+    rgba(10, 1, 3, 0.65) 100%
+  );
+}
+
+/* 5. Micro Silk Editorial Film Grain */
+.editorial-grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+}
+
+/* 6. Typography Content Wrapper */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  width: 100%;
+  max-width: 100vw;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* 7. COMING SOON — The Only Visible Text */
+.coming-soon {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: var(--font-editorial);
+  font-weight: 200;
+  color: var(--color-ivory-dim);
+  text-transform: uppercase;
+  
+  /* Fluid responsive sizing maintaining exact luxury editorial proportions */
+  font-size: clamp(0.88rem, 2.3vw, 1.65rem);
+  line-height: 1;
+  
+  /* Widely spaced letters with compensation to preserve true centering */
+  letter-spacing: var(--letter-spacing-base);
+  margin-right: calc(-1 * var(--letter-spacing-base));
+
+  /* Ultra-subtle ethereal depth */
+  text-shadow: 
+    0 2px 18px rgba(10, 1, 3, 0.65),
+    0 0 40px rgba(130, 12, 35, 0.35);
+
+  /* Graceful initial entry */
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(4px);
+  animation: editorialReveal 2.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  will-change: opacity, filter, transform, letter-spacing;
+}
+
+/* 8. Keyframe Animations */
+
+/* Background Fabric Subtle Movement */
+@keyframes subtleFabricDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+  50% {
+    transform: translate3d(-0.9%, -0.6%, 0) scale(1.045);
+  }
+  100% {
+    transform: translate3d(0.7%, 0.5%, 0) scale(1.025);
+  }
+}
+
+/* Gentle Cinematic Lighting Pulse */
+@keyframes lightingBreathing {
+  0% {
+    opacity: 0.88;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.92;
+  }
+}
+
+/* Smooth Luxury Fade-in for Typography */
+@keyframes editorialReveal {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(5px);
+    letter-spacing: 0.34em;
+  }
+  60% {
+    opacity: 0.85;
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 0.95;
+    filter: blur(0);
+    transform: translateY(0);
+    letter-spacing: var(--letter-spacing-base);
+  }
+}
+
+/* 9. Mobile & Responsive Optimization */
+
+/* Mobile viewports (iPhone, Android) */
+@media (max-width: 640px) {
+  :root {
+    --letter-spacing-base: 0.38em;
+  }
+
+  .coming-soon {
+    /* Perfectly proportioned for small mobile widths */
+    font-size: clamp(0.78rem, 3.8vw, 1.15rem);
+    font-weight: 300; /* Crisp readability on mobile high-DPI screens */
+  }
+
+  .fabric-container {
+    top: -2%;
+    left: -2%;
+    width: 104%;
+    height: 104%;
+  }
+
+  .fabric-img {
+    object-position: center 48%;
+  }
+}
+
+/* Very narrow devices (iPhone SE, 320px screens) */
+@media (max-width: 360px) {
+  :root {
+    --letter-spacing-base: 0.32em;
+  }
+
+  .coming-soon {
+    font-size: 0.72rem;
+  }
+}
+
+/* Tablet viewports (iPad, Android tablets) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  :root {
+    --letter-spacing-base: 0.42em;
+  }
+
+  .coming-soon {
+    font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+  }
+}
+
+/* High-resolution widescreen & 4K desktop */
+@media (min-width: 1440px) {
+  :root {
+    --letter-spacing-base: 0.46em;
+  }
+
+  .coming-soon {
+    font-size: clamp(1.35rem, 1.7vw, 1.85rem);
+    font-weight: 200;
+  }
+}
+
+/* 10. Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .fabric-container {
+    animation: none;
+    transform: scale(1.01);
+  }
+
+  .cinematic-lighting {
+    animation: none;
+  }
+
+  .coming-soon {
+    animation: none;
+    opacity: 0.95;
+    filter: none;
+    transform: none;
+  }
+}

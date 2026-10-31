@@ -1,0 +1,10 @@
+{
+  "name": "coming-soon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal luxury Coming Soon website featuring deep burgundy silk fabric editorial backdrop.",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}
