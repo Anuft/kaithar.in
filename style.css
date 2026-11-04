@@ -138,19 +138,72 @@ html, body {
 
 /* 6. Typography Content Wrapper */
 .content-wrapper {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 1.5rem;
   width: 100%;
-  max-width: 100vw;
+  max-width: 90vw;
   text-align: center;
   pointer-events: none;
+  gap: clamp(1.4rem, 2.8vw, 2.6rem);
 }
 
-/* 7. COMING SOON — The Only Visible Text */
+/* Brand Group: KAITHAR + BY ANN */
+.brand-group {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: clamp(0.2rem, 0.4vw, 0.4rem);
+}
+
+/* 7. Brand Title: KAITHAR */
+.brand-title {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: var(--font-editorial);
+  font-weight: 300;
+  color: var(--color-ivory);
+  text-transform: uppercase;
+  font-size: clamp(1.8rem, 4.4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.38em;
+  margin-right: -0.38em; /* optical centering compensation */
+  text-shadow: 
+    0 2px 24px rgba(10, 1, 3, 0.75),
+    0 0 50px rgba(130, 12, 35, 0.4);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Brand Subline: BY ANN (Little short text on the right side under KAITHAR) */
+.brand-subline {
+  display: inline-block;
+  align-self: flex-end;
+  text-align: right;
+  white-space: nowrap;
+  font-family: var(--font-editorial);
+  font-weight: 300;
+  color: var(--color-ivory);
+  text-transform: uppercase;
+  font-size: clamp(0.48rem, 0.85vw, 0.68rem);
+  line-height: 1;
+  letter-spacing: 0.38em;
+  margin-right: -0.38em;
+  text-shadow: 
+    0 2px 14px rgba(10, 1, 3, 0.6),
+    0 0 30px rgba(130, 12, 35, 0.3);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* COMING SOON */
 .coming-soon {
   display: inline-block;
   white-space: nowrap;
@@ -160,7 +213,7 @@ html, body {
   text-transform: uppercase;
   
   /* Fluid responsive sizing maintaining exact luxury editorial proportions */
-  font-size: clamp(0.88rem, 2.3vw, 1.65rem);
+  font-size: clamp(0.68rem, 1.25vw, 0.98rem);
   line-height: 1;
   
   /* Widely spaced letters with compensation to preserve true centering */
@@ -171,12 +224,14 @@ html, body {
   text-shadow: 
     0 2px 18px rgba(10, 1, 3, 0.65),
     0 0 40px rgba(130, 12, 35, 0.35);
+  opacity: 0.85;
+  visibility: visible;
 
-  /* Graceful initial entry */
+  /* Graceful staggered entry */
   opacity: 0;
-  filter: blur(10px);
+  filter: blur(8px);
   transform: translateY(4px);
-  animation: editorialReveal 2.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  animation: editorialReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
   will-change: opacity, filter, transform, letter-spacing;
 }
 
@@ -233,13 +288,29 @@ html, body {
 /* Mobile viewports (iPhone, Android) */
 @media (max-width: 640px) {
   :root {
-    --letter-spacing-base: 0.38em;
+    --letter-spacing-base: 0.36em;
+  }
+
+  .content-wrapper {
+    gap: clamp(1rem, 2.2vw, 1.6rem);
+  }
+
+  .brand-title {
+    font-size: clamp(1.5rem, 6.4vw, 2.3rem);
+    letter-spacing: 0.32em;
+    margin-right: -0.32em;
+    font-weight: 300;
+  }
+
+  .brand-subline {
+    font-size: clamp(0.44rem, 2.1vw, 0.58rem);
+    letter-spacing: 0.36em;
+    margin-right: -0.36em;
   }
 
   .coming-soon {
-    /* Perfectly proportioned for small mobile widths */
-    font-size: clamp(0.78rem, 3.8vw, 1.15rem);
-    font-weight: 300; /* Crisp readability on mobile high-DPI screens */
+    font-size: clamp(0.62rem, 2.6vw, 0.82rem);
+    font-weight: 300;
   }
 
   .fabric-container {
@@ -257,33 +328,66 @@ html, body {
 /* Very narrow devices (iPhone SE, 320px screens) */
 @media (max-width: 360px) {
   :root {
-    --letter-spacing-base: 0.32em;
+    --letter-spacing-base: 0.30em;
+  }
+
+  .brand-title {
+    font-size: 1.35rem;
+    letter-spacing: 0.28em;
+    margin-right: -0.28em;
+  }
+
+  .brand-subline {
+    font-size: 0.42rem;
+    letter-spacing: 0.32em;
+    margin-right: -0.32em;
   }
 
   .coming-soon {
-    font-size: 0.72rem;
+    font-size: 0.58rem;
   }
 }
 
 /* Tablet viewports (iPad, Android tablets) */
 @media (min-width: 641px) and (max-width: 1024px) {
   :root {
-    --letter-spacing-base: 0.42em;
+    --letter-spacing-base: 0.40em;
+  }
+
+  .brand-title {
+    font-size: clamp(2.2rem, 3.8vw, 2.9rem);
+  }
+
+  .brand-subline {
+    font-size: clamp(0.55rem, 1vw, 0.75rem);
   }
 
   .coming-soon {
-    font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+    font-size: clamp(0.82rem, 1.5vw, 1rem);
   }
 }
 
 /* High-resolution widescreen & 4K desktop */
 @media (min-width: 1440px) {
   :root {
-    --letter-spacing-base: 0.46em;
+    --letter-spacing-base: 0.44em;
+  }
+
+  .brand-title {
+    font-size: clamp(2.8rem, 3.2vw, 3.8rem);
+    letter-spacing: 0.42em;
+    margin-right: -0.42em;
+    font-weight: 200;
+  }
+
+  .brand-subline {
+    font-size: clamp(0.65rem, 0.8vw, 0.85rem);
+    letter-spacing: 0.46em;
+    margin-right: -0.46em;
   }
 
   .coming-soon {
-    font-size: clamp(1.35rem, 1.7vw, 1.85rem);
+    font-size: clamp(0.92rem, 1.05vw, 1.2rem);
     font-weight: 200;
   }
 }
@@ -299,6 +403,8 @@ html, body {
     animation: none;
   }
 
+  .brand-title,
+  .brand-subline,
   .coming-soon {
     animation: none;
     opacity: 0.95;

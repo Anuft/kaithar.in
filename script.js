@@ -104,12 +104,18 @@
     window.addEventListener('deviceorientation', onDeviceOrientation, { passive: true });
   }
 
-  // Preload & check font rendering
+  // Ensure immediate visibility
+  const brandTitle = document.getElementById('brandTitle');
+  const brandSubline = document.getElementById('brandSubline');
+  if (brandTitle) brandTitle.style.visibility = 'visible';
+  if (brandSubline) brandSubline.style.visibility = 'visible';
+  if (comingSoonText) comingSoonText.style.visibility = 'visible';
+
   if ('fonts' in document) {
     document.fonts.ready.then(function () {
-      if (comingSoonText) {
-        comingSoonText.style.visibility = 'visible';
-      }
+      if (brandTitle) brandTitle.style.visibility = 'visible';
+      if (brandSubline) brandSubline.style.visibility = 'visible';
+      if (comingSoonText) comingSoonText.style.visibility = 'visible';
     });
   }
 })();
