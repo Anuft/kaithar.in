@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>KAITHAR BY ANN — Official Atelier</title>
+  <meta name="description" content="KAITHAR by ANN — High-performance luxury leather goods. Handcrafted in French full-grain oxblood leather lined in bespoke burgundy silk. Limited inaugural edition of 40 numbered pieces.">
+  <meta name="theme-color" content="#FAF8F5">
+  <meta name="color-scheme" content="light">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23111111'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23FAF8F5'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Modern Clean Grotesque (Plus Jakarta Sans & Inter) + Subtle Editorial Accent (Cormorant Garamond) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=kaithar_hero">
+</head>
+<body class="saltstone-theme">
+
+  <!-- 1. SALT & STONE SIGNATURE TOP ANNOUNCEMENT BAR -->
+  <aside class="announcement-bar" role="region" aria-label="Announcement">
+    <div class="announcement-inner">
+      <span class="announcement-badge">INAUGURAL ALLOTMENT</span>
+      <span class="announcement-text">Complimentary Worldwide Insured Express Courier • Strictly 40 Numbered Pieces</span>
+      <a href="#product" class="announcement-cta">RESERVE PIECE →</a>
+    </div>
+  </aside>
+
+  <!-- 2. SALT & STONE MINIMALIST STICKY HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      
+      <!-- Left: Navigation Links -->
+      <nav class="header-nav header-nav-left" aria-label="Primary Navigation">
+        <a href="#product" class="nav-link">THE PIECE</a>
+        <a href="#architecture" class="nav-link">ARCHITECTURE</a>
+        <a href="#manifesto" class="nav-link">CRAFTSMANSHIP</a>
+        <a href="#invitation" class="nav-link">RESERVATION</a>
+      </nav>
+
+      <!-- Center: Brand Identity KAITHAR BY ANN -->
+      <div class="header-brand-wrap">
+        <a href="#hero" class="header-brand-link" aria-label="Kaithar by Ann Home">
+          <span class="header-brand-title">KAITHAR</span>
+          <span class="header-brand-sub">BY ANN</span>
+        </a>
+      </div>
+
+      <!-- Right: Utility & Cart -->
+      <div class="header-utility">
+        <span class="currency-tag">INR (₹)</span>
+        <button type="button" class="header-cart-btn" id="openCartDrawerBtn" aria-label="Open Shopping Bag">
+          <span class="cart-label">BAG</span>
+          <span class="cart-counter-pill" id="headerCartCount">1</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. SALT & STONE EDITORIAL HERO BANNER -->
+    <section class="hero-stage" id="hero" aria-label="Hero">
+      
+      <!-- Full-bleed background visual -->
+      <div class="hero-media-wrap">
+        <picture>
+          <source media="(min-width: 769px)" srcset="assets/burgundy-fabric-desktop.webp" type="image/webp">
+          <source media="(min-width: 769px)" srcset="assets/burgundy-fabric-desktop.jpg" type="image/jpeg">
+          <source srcset="assets/burgundy-fabric-mobile.webp" type="image/webp">
+          <img src="assets/burgundy-fabric-desktop.jpg" alt="Rich burgundy silk backdrop" class="hero-media-img" fetchpriority="high">
+        </picture>
+        <div class="hero-scrim-gradient"></div>
+      </div>
+
+      <div class="hero-content-container">
+        <div class="hero-editorial-card">
+          
+          <div class="hero-pill-tag">
+            <span class="pill-dot"></span>
+            <span>EDITION 01 • NUMBERED RELEASE</span>
+          </div>
+
+          <div class="hero-title-group">
+            <h1 class="hero-headline">KAITHAR</h1>
+            <span class="hero-author-credit">BY ANN</span>
+          </div>
+
+          <p class="hero-lead">
+            An architectural bifold crafted from vegetable-tanned French oxblood calfskin and lined with heavy 320 GSM deep burgundy silk. Engineered with an arched thumb-notch card ejector and double-layer cash architecture.
+          </p>
+
+          <div class="hero-btn-row">
+            <a href="#product" class="btn-pill-solid">
+              <span>EXPLORE & RESERVE — ₹4,000 INR</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="#architecture" class="btn-pill-ghost">
+              <span>VIEW ARCHITECTURE</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-strip">
+            <div class="trust-item">
+              <span class="trust-icon">✦</span>
+              <span>40 Numbered Units</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">✦</span>
+              <span>Complimentary Courier</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">✦</span>
+              <span>Atelier Certificate</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="#ticker" class="scroll-down-cue" aria-label="Scroll to discover">
+        <span>SCROLL TO DISCOVER</span>
+        <div class="scroll-arrow-icon">↓</div>
+      </a>
+    </section>
+
+    <!-- 4. SALT & STONE PRESS / CRITICAL ACCLAIM TICKER -->
+    <section class="press-ticker-section" id="ticker" aria-label="Atelier Reviews">
+      <div class="ticker-inner">
+        <div class="ticker-track">
+          <div class="ticker-quote">“The quiet triumph of tactile minimalism and architectural leather.” — <strong>VOGUE</strong></div>
+          <div class="ticker-star">✦</div>
+          <div class="ticker-quote">“French full-grain oxblood leather sculpted with rare restraint.” — <strong>GQ ATELIER</strong></div>
+          <div class="ticker-star">✦</div>
+          <div class="ticker-quote">“An inaugural edition defined by uncompromising leathercraft.” — <strong>VANITY FAIR</strong></div>
+          <div class="ticker-star">✦</div>
+          <div class="ticker-quote">“Strictly 40 individually hand-numbered pieces worldwide.” — <strong>HAUTE ÉDITION</strong></div>
+          <div class="ticker-star">✦</div>
+          <!-- Loop Duplication for seamless infinite scroll -->
+          <div class="ticker-quote">“The quiet triumph of tactile minimalism and architectural leather.” — <strong>VOGUE</strong></div>
+          <div class="ticker-star">✦</div>
+          <div class="ticker-quote">“French full-grain oxblood leather sculpted with rare restraint.” — <strong>GQ ATELIER</strong></div>
+          <div class="ticker-star">✦</div>
+          <div class="ticker-quote">“An inaugural edition defined by uncompromising leathercraft.” — <strong>VANITY FAIR</strong></div>
+          <div class="ticker-star">✦</div>
+          <div class="ticker-quote">“Strictly 40 individually hand-numbered pieces worldwide.” — <strong>HAUTE ÉDITION</strong></div>
+          <div class="ticker-star">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SALT & STONE SIGNATURE 2-COLUMN PRODUCT SPOTLIGHT -->
+    <section class="product-showcase-section" id="product">
+      <div class="showcase-container">
+        
+        <div class="product-grid-layout product-card" data-product-id="wallet" data-product-title="BURGUNDY WALLET" data-product-price="4000" data-product-img="assets/kaithar-wallet-open.webp">
+          
+          <!-- LEFT: Interactive Sticky Gallery -->
+          <div class="product-gallery-column">
+            
+            <div class="main-image-stage">
+              <img 
+                src="assets/kaithar-wallet-open.webp" 
+                alt="BURGUNDY WALLET in French Oxblood Leather" 
+                id="mainProductImg" 
+                class="gallery-hero-img"
+              >
+            </div>
+
+            <!-- 7 Official Studio Angles from Atelier Archive -->
+            <div class="gallery-thumbs-row" role="tablist" aria-label="Official Studio Angles">
+              <button type="button" class="thumb-card active" data-img="assets/kaithar-wallet-open.webp" data-alt="BURGUNDY WALLET Open Interior View" role="tab" aria-selected="true">
+                <img src="assets/kaithar-wallet-open.webp" alt="Open Interior" loading="lazy">
+                <span class="thumb-name">01 OPEN INTERIOR</span>
+              </button>
+              
+              <button type="button" class="thumb-card" data-img="assets/kaithar-wallet-front-closed.webp" data-alt="BURGUNDY WALLET Closed Front Face with Silver Logo" role="tab" aria-selected="false">
+                <img src="assets/kaithar-wallet-front-closed.webp" alt="Closed Front" loading="lazy">
+                <span class="thumb-name">02 CLOSED FRONT</span>
+              </button>
+              
+              <button type="button" class="thumb-card" data-img="assets/kaithar-wallet-perspective.webp" data-alt="BURGUNDY WALLET 3/4 Perspective Angle View" role="tab" aria-selected="false">
+                <img src="assets/kaithar-wallet-perspective.webp" alt="3/4 Perspective" loading="lazy">
+                <span class="thumb-name">03 PERSPECTIVE</span>
+              </button>
+              
+              <button type="button" class="thumb-card" data-img="assets/kaithar-wallet-loaded-cards.webp" data-alt="BURGUNDY WALLET Loaded Card Tiers View" role="tab" aria-selected="false">
+                <img src="assets/kaithar-wallet-loaded-cards.webp" alt="Loaded Cards" loading="lazy">
+                <span class="thumb-name">04 LOADED CARDS</span>
+              </button>
+              
+              <button type="button" class="thumb-card" data-img="assets/kaithar-wallet-horizontal-spine.webp" data-alt="BURGUNDY WALLET Slim Folded Profile View" role="tab" aria-selected="false">
+                <img src="assets/kaithar-wallet-horizontal-spine.webp" alt="Slim Profile" loading="lazy">
+                <span class="thumb-name">05 SLIM PROFILE</span>
+              </button>
+
+              <button type="button" class="thumb-card" data-img="assets/kaithar-wallet-vertical-spine.webp" data-alt="BURGUNDY WALLET Vertical Spine Architecture" role="tab" aria-selected="false">
+                <img src="assets/kaithar-wallet-vertical-spine.webp" alt="Vertical Spine" loading="lazy">
+                <span class="thumb-name">06 FOLDED SPINE</span>
+              </button>
+              
+              <button type="button" class="thumb-card" data-img="assets/kaithar-wallet-features-diagram.webp" data-alt="BURGUNDY WALLET Architectural Specifications Diagram" role="tab" aria-selected="false">
+                <img src="assets/kaithar-wallet-features-diagram.webp" alt="Spec Diagram" loading="lazy">
+                <span class="thumb-name">07 SPEC DIAGRAM</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Editorial Details, Sensorial Notes & Buy Box -->
+          <div class="product-info-column">
+            
+            <div class="product-header-block">
+              <div class="product-category-row">
+                <span class="product-category-label">ATELIER LEATHER GOODS</span>
+                <span class="product-rating-stars">★★★★★ <span class="rating-count">5.0 (Inaugural Release)</span></span>
+              </div>
+              
+              <h2 class="product-main-title">BURGUNDY WALLET</h2>
+              
+              <div class="product-price-row">
+                <span class="product-price-val">₹4,000 INR</span>
+                <span class="tax-shipping-note">Taxes included • Complimentary express courier</span>
+              </div>
+            </div>
+
+            <!-- Salt & Stone Sensorial Material Notes Breakdown -->
+            <div class="material-notes-card">
+              <span class="notes-header-tag">SENSORIAL & MATERIAL PROFILE</span>
+              
+              <div class="notes-grid">
+                <div class="note-item">
+                  <span class="note-key">EXTERIOR LEATHER</span>
+                  <strong class="note-val">French Full-Grain Oxblood Calfskin</strong>
+                  <span class="note-desc">Supple vegetable-tanned grain with deep burgundy undertones.</span>
+                </div>
+                <div class="note-item">
+                  <span class="note-key">INTERIOR SILK</span>
+                  <strong class="note-val">Bespoke 320 GSM Burgundy Silk</strong>
+                  <span class="note-desc">Ultra-dense silk twill for frictionless banknote draw.</span>
+                </div>
+                <div class="note-item">
+                  <span class="note-key">ATELIER INSIGNIA</span>
+                  <strong class="note-val">Hot-Stamped Metallic Silver Foil</strong>
+                  <span class="note-desc">Debossed KAITHAR brandmark on right flap and front face.</span>
+                </div>
+                <div class="note-item">
+                  <span class="note-key">EDGE FINISHING</span>
+                  <strong class="note-val">Hand-Burnished Organic Beeswax</strong>
+                  <span class="note-desc">Glass-smooth edges sealed with natural beeswax and heat iron.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- E-Commerce Quantity & Add to Bag -->
+            <div class="buy-box-container">
+              
+              <div class="qty-and-cta-row">
+                <div class="qty-stepper" aria-label="Select Quantity">
+                  <button type="button" class="qty-btn" id="btnQtyMinus" aria-label="Decrease quantity">−</button>
+                  <span class="qty-display" id="productQtyDisplay">1</span>
+                  <button type="button" class="qty-btn" id="btnQtyPlus" aria-label="Increase quantity">+</button>
+                </div>
+
+                <button type="button" class="btn-pill-solid btn-add-to-bag btn-add-to-cart" data-add="wallet" id="mainAddToBagBtn">
+                  <span>ADD TO BAG — ₹4,000 INR</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+
+              <div class="allocation-badge-row">
+                <span class="stock-status-dot"></span>
+                <span class="stock-status-text">Inaugural Allocation: <strong>1 of 40 Sequentially Numbered Units</strong></span>
+              </div>
+            </div>
+
+            <!-- Salt & Stone Style Collapsible Accordions -->
+            <div class="product-accordions">
+              
+              <!-- Accordion 1: Architecture -->
+              <details class="accordion-item" open>
+                <summary class="accordion-summary">
+                  <span class="summary-title">ARCHITECTURAL SPECIFICATIONS</span>
+                  <span class="summary-icon">+</span>
+                </summary>
+                <div class="accordion-body">
+                  <ul class="accordion-specs-list">
+                    <li><strong>Cash Pockets (Double Layer):</strong> Dual-tier compartments designed to keep domestic and international currency neat, uncreased, and ultra-flat.</li>
+                    <li><strong>4 Dedicated Card Slots:</strong> Precision-milled bevel-edged tiers engineered for immediate tactile card draw and secure card retention.</li>
+                    <li><strong>Quick Access Pocket:</strong> Signature arched thumb-notch ejector on the left wing enabling swift one-handed primary card deployment.</li>
+                    <li><strong>Extra Storage Slip Pocket:</strong> Angular diagonal slip pocket hot-stamped with the silver KAITHAR insignia for transit passes and receipts.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <!-- Accordion 2: Materials & Craft -->
+              <details class="accordion-item">
+                <summary class="accordion-summary">
+                  <span class="summary-title">MATERIALS & CRAFTSMANSHIP</span>
+                  <span class="summary-icon">+</span>
+                </summary>
+                <div class="accordion-body">
+                  <p>Every Burgundy Wallet is cut, skived, and hand-stitched with tonal waxed thread. Vegetable tannins impart a rich, natural oxblood hue that deepens into a magnificent personal patina over years of use.</p>
+                </div>
+              </details>
+
+              <!-- Accordion 3: Delivery & Authentication -->
+              <details class="accordion-item">
+                <summary class="accordion-summary">
+                  <span class="summary-title">COMPLIMENTARY SHIPPING & CERTIFICATION</span>
+                  <span class="summary-icon">+</span>
+                </summary>
+                <div class="accordion-body">
+                  <p>All orders are dispatched via insured priority express courier. Each piece is housed in an archival presentation case accompanied by an individually numbered certificate of atelier authenticity signed by Ann.</p>
+                </div>
+              </details>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. SALT & STONE 4-QUADRANT ARCHITECTURE GRID -->
+    <section class="architecture-section" id="architecture" aria-label="Wallet Architecture">
+      <div class="section-container">
+        
+        <div class="section-header-centered">
+          <span class="section-tag-pill">FUNCTIONAL ARCHITECTURE</span>
+          <h2 class="section-heading-large">Engineered For Everyday Permanence</h2>
+          <p class="section-subheading">A study in functional minimalism — every pocket, tier, and contour serves a precise ergonomic purpose.</p>
+        </div>
+
+        <div class="architecture-grid">
+          
+          <div class="arch-card">
+            <div class="arch-card-top">
+              <span class="arch-num">01</span>
+              <span class="arch-tag">INTERIOR</span>
+            </div>
+            <h3 class="arch-title">CASH POCKETS</h3>
+            <span class="arch-sub">DOUBLE LAYER ARCHITECTURE</span>
+            <p class="arch-desc">
+              Dual-tier interior banknote compartments engineered to hold flat, unfolded bills securely without adding thickness to the folded bifold spine.
+            </p>
+          </div>
+
+          <div class="arch-card">
+            <div class="arch-card-top">
+              <span class="arch-num">02</span>
+              <span class="arch-tag">CAPACITY</span>
+            </div>
+            <h3 class="arch-title">4 CARD SLOTS</h3>
+            <span class="arch-sub">PRECISION BEVEL-EDGED TIERS</span>
+            <p class="arch-desc">
+              Stepped card slots contoured for immediate visual identification and effortless tactile draw, calibrated to eliminate card slippage.
+            </p>
+          </div>
+
+          <div class="arch-card">
+            <div class="arch-card-top">
+              <span class="arch-num">03</span>
+              <span class="arch-tag">ERGONOMICS</span>
+            </div>
+            <h3 class="arch-title">QUICK ACCESS POCKET</h3>
+            <span class="arch-sub">SIGNATURE ARCHED THUMB NOTCH</span>
+            <p class="arch-desc">
+              Located on the left interior wing, this custom-cut arched ejector allows rapid, friction-free one-finger deployment of your primary card.
+            </p>
+          </div>
+
+          <div class="arch-card">
+            <div class="arch-card-top">
+              <span class="arch-num">04</span>
+              <span class="arch-tag">UTILITY</span>
+            </div>
+            <h3 class="arch-title">EXTRA STORAGE SLIP</h3>
+            <span class="arch-sub">ANGULAR RIGHT FLAP COMPARTMENT</span>
+            <p class="arch-desc">
+              A diagonal lower pocket hot-stamped with the silver KAITHAR brandmark, ideal for receipts, folded banknotes, or business credentials.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Architectural Blueprint Schematic Showcase -->
+        <div class="arch-schematic-wrap">
+          <div class="arch-schematic-card">
+            <div class="arch-schematic-badge">
+              <span>ATELIER SCHEMATIC • SPECIFICATION BLUEPRINT</span>
+            </div>
+            <img src="assets/kaithar-wallet-features-diagram.webp" alt="BURGUNDY WALLET Detailed Architectural Blueprint" class="arch-schematic-img" loading="lazy">
+            <div class="arch-schematic-caption">
+              <span>Figure 01: Multi-Tier Pocket Architecture, Arched Quick Ejector, and Double-Layer Currency Chamber.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. SALT & STONE SPLIT EDITORIAL MANIFESTO -->
+    <section class="manifesto-split-section" id="manifesto" aria-label="Brand Manifesto">
+      <div class="split-layout">
+        
+        <div class="split-image-col">
+          <picture>
+            <source srcset="assets/raw-leather.webp?v=rolls_1" type="image/webp">
+            <img src="assets/raw-leather.jpg?v=rolls_1" alt="French full-grain oxblood calfskin leather hide and burnishing tools" class="split-img" loading="lazy">
+          </picture>
+          <div class="split-badge-overlay">
+            <span>FRENCH FULL-GRAIN LEATHER</span>
+          </div>
+        </div>
+
+        <div class="split-content-col">
+          <span class="section-tag-pill">PHILOSOPHY & CRAFT</span>
+          <h2 class="split-heading">Sculptural Poise. Tactile Honesty.</h2>
+          
+          <blockquote class="split-quote">
+            “A wallet is carried in your hand every single day. It should possess quiet permanence, sculptural poise, and uncompromising tactile honesty.”
+          </blockquote>
+          <cite class="split-author">— ANN, CREATIVE DIRECTOR</cite>
+
+          <p class="split-paragraph">
+            At KAITHAR, we reject planned obsolescence and fleeting decorative trends. Every wallet is designed as an architectural object: balanced in weight, calibrated in thickness, and hand-finished with natural organic beeswax to mature alongside its custodian.
+          </p>
+
+          <div class="split-pillars-row">
+            <div class="pillar-mini">
+              <strong>FRENCH CALFSKIN</strong>
+              <span>Full-Grain Vegetable Tan</span>
+            </div>
+            <div class="pillar-mini">
+              <strong>BURGUNDY SILK</strong>
+              <span>320 GSM Bespoke Twill</span>
+            </div>
+            <div class="pillar-mini">
+              <strong>ORGANIC BEESWAX</strong>
+              <span>Hand-Burnished Edges</span>
+            </div>
+          </div>
+
+          <div class="split-cta-wrap">
+            <a href="#product" class="btn-pill-solid">
+              <span>EXPLORE THE INAUGURAL PIECE →</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. SALT & STONE STYLE PRIVATE INVITATION & ALLOTMENT -->
+    <section class="invitation-section" id="invitation" aria-label="Private Allotment">
+      <div class="section-container">
+        <div class="invitation-card-salt">
+          
+          <span class="section-tag-pill">PRIVATE ALLOTMENT</span>
+          <h2 class="invitation-heading">Reserve Your Numbered Piece</h2>
+          <p class="invitation-sub">
+            The Inaugural Edition of 40 pieces is allocated strictly to registered patrons. Reserve your piece before the public unveiling.
+          </p>
+
+          <form class="invitation-form-salt" id="invitationForm">
+            <div class="form-row-two">
+              <div class="input-group">
+                <label for="userName" class="field-label">FULL NAME</label>
+                <input type="text" id="userName" placeholder="Your full name" required class="input-field-salt">
+              </div>
+              <div class="input-group">
+                <label for="userEmail" class="field-label">EMAIL ADDRESS</label>
+                <input type="email" id="userEmail" placeholder="your@email.com" required class="input-field-salt">
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="interestSelect" class="field-label">SELECTED PIECE</label>
+              <select id="interestSelect" class="input-field-salt select-field-salt">
+                <option value="wallet">BURGUNDY WALLET — Numbered Inaugural Edition (₹4,000 INR)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-pill-solid btn-submit-invitation">
+              <span>REQUEST ALLOTMENT RESERVATION — ₹4,000 INR</span>
+              <span class="btn-arrow">→</span>
+            </button>
+
+            <p class="form-feedback-status" id="formStatus" aria-live="polite"></p>
+          </form>
+
+          <div class="invitation-guarantee-strip">
+            <span>🔒 256-Bit Encrypted Reservation</span>
+            <span>•</span>
+            <span>✓ No Mass Production</span>
+            <span>•</span>
+            <span>✓ Insured Global Priority Courier</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. SALT & STONE SIGNATURE SLIDE-OUT CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" aria-hidden="true"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Bag Drawer" aria-hidden="true">
+    <div class="cart-drawer-wrapper">
+      
+      <!-- Drawer Header -->
+      <div class="drawer-header">
+        <div class="drawer-header-title">
+          <span class="drawer-title-main">YOUR BAG</span>
+          <span class="drawer-items-count" id="drawerItemCount">1 PIECE</span>
+        </div>
+        <button type="button" class="drawer-close-btn" id="btnCloseDrawer" aria-label="Close Shopping Bag">×</button>
+      </div>
+
+      <!-- Free Shipping Progress Indicator (Salt & Stone Signature) -->
+      <div class="drawer-shipping-meter">
+        <div class="meter-text">
+          <span class="meter-check">✓</span>
+          <span>Complimentary Worldwide Express Courier Unlocked</span>
+        </div>
+        <div class="meter-bar">
+          <div class="meter-fill" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Drawer Items Body -->
+      <div class="drawer-items-list" id="drawerCartItems">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="drawer-footer-block" id="drawerCartFooter">
+        
+        <div class="drawer-subtotal-line">
+          <span class="subtotal-label">SUBTOTAL</span>
+          <span class="subtotal-value" id="drawerSubtotal">₹4,000 INR</span>
+        </div>
+        
+        <p class="drawer-shipping-disclaimer">Shipping and taxes calculated at reservation checkout.</p>
+
+        <div class="drawer-actions-stack">
+          <button type="button" class="btn-pill-solid btn-checkout-main" id="drawerCheckoutBtn">
+            <span>RESERVE & CHECKOUT</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          
+          <a href="cart.html" class="btn-link-bag-page">VIEW FULL SHOPPING BAG →</a>
+        </div>
+
+        <div class="drawer-security-badges">
+          <span>✓ Hand-Numbered Edition 1/40</span>
+          <span>•</span>
+          <span>✓ Insured Air Courier</span>
+        </div>
+
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Checkout Modal Dialog -->
+  <div class="checkout-modal-overlay" id="checkoutModalOverlay" aria-hidden="true">
+    <div class="checkout-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+      <button type="button" class="btn-close-modal" id="btnCloseModal" aria-label="Close dialog">×</button>
+      
+      <span class="modal-badge-tag">FINAL ALLOTMENT</span>
+      <h2 class="modal-heading" id="modalHeading">Confirm Wallet Reservation</h2>
+      <p class="modal-subtext">Each piece is sequentially hand-stamped with its unique edition number (1/40) and accompanied by an atelier certificate.</p>
+
+      <form class="checkout-modal-form" id="checkoutForm">
+        <div class="modal-input-row">
+          <input type="text" placeholder="Full Name" required class="input-field-salt" id="checkoutName">
+          <input type="email" placeholder="Email Address" required class="input-field-salt" id="checkoutEmail">
+        </div>
+
+        <div class="modal-input-row">
+          <input type="tel" placeholder="Phone Number (for courier)" required class="input-field-salt" id="checkoutPhone">
+          <input type="text" placeholder="Country / Region" required class="input-field-salt" id="checkoutCountry">
+        </div>
+
+        <input type="text" placeholder="Delivery Address / City / Postal Code" required class="input-field-salt" id="checkoutAddress">
+
+        <div class="order-preview-mini">
+          <span>Total Allotment Value:</span>
+          <strong id="modalTotalPayable">₹4,000 INR</strong>
+        </div>
+
+        <button type="submit" class="btn-pill-solid btn-modal-confirm" id="btnConfirmReservation">
+          <span>CONFIRM NUMBERED RESERVATION — ₹4,000 INR →</span>
+        </button>
+
+        <p class="form-feedback-status" id="checkoutStatus"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- 10. SALT & STONE MINIMALIST LUXURY FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Col 1: Newsletter / Atelier Dispatch -->
+        <div class="footer-col-dispatch">
+          <span class="footer-col-heading">ATELIER DISPATCH</span>
+          <p class="footer-col-text">Be notified of subsequent numbered releases, private archive previews, and material dispatches.</p>
+          
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent = 'SUBSCRIBED ✓';">
+            <div class="footer-input-wrap">
+              <input type="email" placeholder="Enter your email" required class="footer-input">
+              <button type="submit" class="footer-submit-btn">JOIN →</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Col 2: The Piece -->
+        <div class="footer-col-links">
+          <span class="footer-col-heading">THE PIECE</span>
+          <ul>
+            <li><a href="#product">BURGUNDY WALLET (₹4,000 INR)</a></li>
+            <li><a href="#architecture">Architecture & Specs</a></li>
+            <li><a href="cart.html">View Shopping Bag</a></li>
+            <li><a href="#invitation">Private Allotment</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Craftsmanship -->
+        <div class="footer-col-links">
+          <span class="footer-col-heading">CRAFTSMANSHIP</span>
+          <ul>
+            <li><a href="#manifesto">French Oxblood Leather</a></li>
+            <li><a href="#manifesto">Burgundy Silk Lining</a></li>
+            <li><a href="#manifesto">Organic Beeswax Edges</a></li>
+            <li><a href="#manifesto">Hand-Numbered Editions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Atelier Concierge -->
+        <div class="footer-col-links">
+          <span class="footer-col-heading">CONCIERGE</span>
+          <ul>
+            <li>Paris • Kochi • Dubai</li>
+            <li><a href="mailto:concierge@kaithar.com">concierge@kaithar.com</a></li>
+            <li><a href="mailto:private@kaithar.com">private@kaithar.com</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Center Large Brandmark -->
+      <div class="footer-brand-hero">
+        <span class="footer-brand-name">KAITHAR</span>
+        <span class="footer-brand-by">BY ANN</span>
+      </div>
+
+      <!-- Bottom Legal Row -->
+      <div class="footer-bottom-row">
+        <p class="footer-copyright">© 2026 KAITHAR BY ANN. ALL RIGHTS RESERVED.</p>
+        <div class="footer-legal-links">
+          <a href="#">PRIVACY POLICY</a>
+          <a href="#">TERMS OF ALLOTMENT</a>
+          <a href="#">INSURED SHIPPING</a>
+          <a href="cart.html">SHOPPING BAG</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js?v=burgundy_wallet_v1"></script>
+</body>
+</html>

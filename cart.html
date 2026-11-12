@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Your Bag — KAITHAR BY ANN</title>
+  <meta name="description" content="Your shopping bag — KAITHAR by ANN. Handcrafted luxury leather goods. Limited inaugural edition of 40 numbered pieces.">
+  <meta name="theme-color" content="#FAF8F5">
+  <meta name="color-scheme" content="light">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23111111'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23FAF8F5'/%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=kaithar_hero">
+</head>
+<body class="saltstone-theme cart-page-body">
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar">
+    <div class="announcement-inner">
+      <span class="announcement-badge">INAUGURAL ALLOTMENT</span>
+      <span class="announcement-text">Complimentary Worldwide Insured Express Courier • Strictly 40 Numbered Pieces</span>
+      <a href="index.html#product" class="announcement-cta">ATELIER PIECE →</a>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      
+      <div class="header-nav-left">
+        <a href="index.html" class="nav-link">← RETURN TO ATELIER</a>
+      </div>
+
+      <div class="header-brand-wrap">
+        <a href="index.html" class="header-brand-link" aria-label="Kaithar by Ann Home">
+          <span class="header-brand-title">KAITHAR</span>
+          <span class="header-brand-sub">BY ANN</span>
+        </a>
+      </div>
+
+      <div class="header-utility">
+        <a href="index.html#product" class="nav-link" style="margin-right: 1rem;">THE PIECE</a>
+        <div class="header-cart-btn active">
+          <span class="cart-label">BAG</span>
+          <span class="cart-counter-pill" id="headerCartCount">1</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Full Cart View -->
+  <main class="cart-main-container">
+    <div class="section-container">
+      
+      <div class="cart-page-header">
+        <span class="section-tag-pill">SHOPPING BAG</span>
+        <h1 class="cart-page-title">Your Inaugural Reservation</h1>
+        <p class="cart-page-subtitle">Every piece is individually handcrafted from rich French oxblood calfskin with precision perimeter saddle stitching, burgundy silk lining, and silver-embossed atelier insignia.</p>
+      </div>
+
+      <!-- Empty Cart Message -->
+      <div class="empty-cart-view" id="emptyCartView" style="display: none;">
+        <div class="empty-cart-icon">✧</div>
+        <h2 class="empty-cart-title">YOUR BAG IS CURRENTLY EMPTY</h2>
+        <p class="empty-cart-desc">Explore the inaugural Burgundy Wallet creation.</p>
+        <a href="index.html#product" class="btn-pill-solid" style="display: inline-flex; margin-top: 1rem;">
+          <span>DISCOVER BURGUNDY WALLET →</span>
+        </a>
+      </div>
+
+      <!-- Active Cart Content -->
+      <div class="cart-content-layout" id="activeCartLayout">
+        
+        <!-- Left: Items Table -->
+        <div class="cart-items-column">
+          <div class="cart-table-head">
+            <span>PIECE</span>
+            <span>SPECIFICATION</span>
+            <span>QTY</span>
+            <span>TOTAL</span>
+          </div>
+
+          <div class="cart-items-list" id="cartItemsList">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="cart-guarantee-strip">
+            <div class="guarantee-item">
+              <span class="guarantee-icon">✦</span>
+              <p><strong>Numbered Edition</strong> — Hand-stamped certificate of atelier authenticity.</p>
+            </div>
+            <div class="guarantee-item">
+              <span class="guarantee-icon">✦</span>
+              <p><strong>Complimentary Courier</strong> — Insured express air courier shipping worldwide.</p>
+            </div>
+            <div class="guarantee-item">
+              <span class="guarantee-icon">✦</span>
+              <p><strong>Signature Archival Box</strong> — Wooden presentation case with raw silk wrap.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Order Summary Box -->
+        <aside class="cart-summary-column">
+          <div class="summary-card">
+            <h3 class="summary-title">RESERVATION SUMMARY</h3>
+
+            <div class="summary-row">
+              <span class="summary-label">Subtotal</span>
+              <span class="summary-val" id="summarySubtotal">₹4,000 INR</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-label">Worldwide Priority Courier</span>
+              <span class="summary-val highlight-free">COMPLIMENTARY</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-label">Atelier Archival Packaging</span>
+              <span class="summary-val highlight-free">INCLUDED</span>
+            </div>
+
+            <!-- Promo Code Input -->
+            <div class="promo-box">
+              <div class="promo-input-wrap">
+                <input type="text" placeholder="Privileged Atelier Code" class="promo-input" id="promoInput">
+                <button type="button" class="promo-btn" id="applyPromoBtn">APPLY</button>
+              </div>
+              <p class="promo-feedback" id="promoFeedback"></p>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-total-row">
+              <span class="total-label">TOTAL (INR)</span>
+              <span class="total-val" id="summaryTotal">₹4,000 INR</span>
+            </div>
+
+            <button type="button" class="btn-pill-solid btn-checkout-primary" id="btnCheckoutTrigger">
+              <span>PROCEED TO PRIVATE CHECKOUT →</span>
+            </button>
+
+            <p class="summary-secure-note">
+              🔒 256-BIT ENCRYPTED ATELIER RESERVATION • EDITION 01 / 40 PIECES
+            </p>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Checkout Modal Dialog -->
+  <div class="checkout-modal-overlay" id="checkoutModalOverlay" aria-hidden="true">
+    <div class="checkout-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+      <button type="button" class="btn-close-modal" id="btnCloseModal" aria-label="Close dialog">×</button>
+      
+      <span class="modal-badge-tag">FINAL ALLOTMENT</span>
+      <h2 class="modal-heading" id="modalHeading">Confirm Wallet Reservation</h2>
+      <p class="modal-subtext">Each piece is sequentially hand-stamped with its unique edition number (1/40) and accompanied by an atelier certificate.</p>
+
+      <form class="checkout-modal-form" id="checkoutForm">
+        <div class="modal-input-row">
+          <input type="text" placeholder="Full Name" required class="input-field-salt" id="checkoutName">
+          <input type="email" placeholder="Email Address" required class="input-field-salt" id="checkoutEmail">
+        </div>
+
+        <div class="modal-input-row">
+          <input type="tel" placeholder="Phone Number (for courier)" required class="input-field-salt" id="checkoutPhone">
+          <input type="text" placeholder="Country / Region" required class="input-field-salt" id="checkoutCountry">
+        </div>
+
+        <input type="text" placeholder="Delivery Address / City / Postal Code" required class="input-field-salt" id="checkoutAddress">
+
+        <div class="order-preview-mini">
+          <span>Total Allotment Value:</span>
+          <strong id="modalTotalPayable">₹4,000 INR</strong>
+        </div>
+
+        <button type="submit" class="btn-pill-solid btn-modal-confirm" id="btnConfirmReservation">
+          <span>CONFIRM NUMBERED RESERVATION — ₹4,000 INR →</span>
+        </button>
+
+        <p class="form-feedback-status" id="checkoutStatus"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Minimalist Luxury Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand-hero">
+        <span class="footer-brand-name">KAITHAR</span>
+        <span class="footer-brand-by">BY ANN</span>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p class="footer-copyright">© 2026 KAITHAR BY ANN. ALL RIGHTS RESERVED.</p>
+        <div class="footer-legal-links">
+          <a href="#">CLIENT PRIVACY</a>
+          <a href="#">SHIPPING & RETURNS</a>
+          <a href="index.html">ATELIER HOME</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=burgundy_wallet_v1"></script>
+</body>
+</html>

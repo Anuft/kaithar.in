@@ -1,0 +1,2371 @@
+/* ==========================================================================
+   KAITHAR BY ANN — SALT & STONE CONTEMPORARY EDITORIAL DESIGN SYSTEM
+   ========================================================================== */
+
+/* 1. Global Reset & Design Tokens */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  /* Salt & Stone Color Palette: Warm Stone, Crisp White & Deep Charcoal */
+  --color-stone-bg: #FAF8F5;
+  --color-stone-warm: #F4F0E8;
+  --color-stone-card: #FFFFFF;
+  --color-stone-border: #E5E1D8;
+  --color-stone-border-light: #ECE8DF;
+  --color-stone-muted: #8E8A82;
+
+  --color-charcoal: #111111;
+  --color-charcoal-deep: #080808;
+  --color-charcoal-muted: #555555;
+  --color-charcoal-faint: #777777;
+
+  --color-oxblood: #4A0917;
+  --color-oxblood-tint: #F7EFF1;
+  --color-gold-accent: #B88E52;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  --header-height: 64px;
+  --announcement-height: 38px;
+  --radius-pill: 9999px;
+  --radius-card: 8px;
+  --radius-sm: 4px;
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-medium: 0 12px 36px rgba(0, 0, 0, 0.08);
+  --shadow-floating: 0 20px 50px rgba(0, 0, 0, 0.12);
+  
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-stone-bg);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+body.saltstone-theme {
+  background-color: var(--color-stone-bg);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  line-height: 1.5;
+}
+
+main {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ==========================================================================
+   2. Salt & Stone Top Announcement Bar
+   ========================================================================== */
+.announcement-bar {
+  background-color: #000000;
+  color: #FFFFFF;
+  height: var(--announcement-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 110;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  contain: paint;
+}
+
+.announcement-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.announcement-badge {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+}
+
+.announcement-text {
+  opacity: 0.95;
+}
+
+.announcement-cta {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: opacity var(--transition-fast);
+}
+
+.announcement-cta:hover {
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   3. Salt & Stone Minimalist Sticky Header
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-stone-border);
+  z-index: 100;
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.header-inner {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.header-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-charcoal);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-brand-wrap {
+  text-align: center;
+}
+
+.header-brand-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.header-brand-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-right: -0.28em;
+  color: var(--color-charcoal);
+}
+
+.header-brand-sub {
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  margin-right: -0.32em;
+  color: var(--color-charcoal-muted);
+  margin-top: 3px;
+}
+
+.header-utility {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.75rem;
+}
+
+.currency-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-charcoal-muted);
+}
+
+.header-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #000000;
+  color: #FFFFFF;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  transition: all var(--transition-fast);
+}
+
+.header-cart-btn:hover {
+  background: #282828;
+  transform: translateY(-1px);
+}
+
+.cart-counter-pill {
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: var(--radius-pill);
+  padding: 0.1rem 0.45rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. Salt & Stone Editorial Hero Banner
+   ========================================================================== */
+.hero-stage {
+  position: relative;
+  min-height: 640px;
+  height: clamp(640px, 86vh, 860px);
+  max-height: 880px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: #120307;
+  padding: 4rem 2.5rem;
+}
+
+.hero-media-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.85);
+}
+
+.hero-scrim-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 2, 5, 0.88) 0%,
+    rgba(18, 3, 7, 0.68) 45%,
+    rgba(22, 3, 8, 0.25) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-editorial-card {
+  max-width: 580px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: heroCardFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.95rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(37, 211, 102, 0.8);
+}
+
+.hero-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hero-headline {
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: #FFFFFF;
+}
+
+.hero-author-credit {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.hero-lead {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 300;
+}
+
+.hero-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* Salt & Stone Iconic Black Pill Buttons */
+.btn-pill-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-radius: var(--radius-pill);
+  padding: 0.95rem 2rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn-pill-solid:hover {
+  background-color: #FAF8F5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.btn-pill-solid .btn-arrow {
+  font-size: 0.95rem;
+  transition: transform var(--transition-fast);
+}
+
+.btn-pill-solid:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+.btn-pill-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+  border-radius: var(--radius-pill);
+  padding: 0.95rem 1.8rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+}
+
+.btn-pill-ghost:hover {
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-trust-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.trust-icon {
+  color: var(--color-gold-accent);
+  font-size: 0.7rem;
+}
+
+.scroll-down-cue {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.scroll-down-cue:hover {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   5. Salt & Stone Running Press Accolades Ticker
+   ========================================================================== */
+.press-ticker-section {
+  background-color: var(--color-stone-warm);
+  border-top: 1px solid var(--color-stone-border);
+  border-bottom: 1px solid var(--color-stone-border);
+  padding: 1.1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100vw;
+  contain: paint;
+}
+
+.ticker-inner {
+  display: flex;
+  width: 100%;
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  animation: tickerSlide 35s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes tickerSlide {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.ticker-quote {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--color-charcoal);
+  font-weight: 400;
+}
+
+.ticker-quote strong {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.ticker-star {
+  color: var(--color-oxblood);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   6. Salt & Stone Signature 2-Column Product Spotlight
+   ========================================================================== */
+.product-showcase-section {
+  padding: 5.5rem 2.5rem;
+  background-color: var(--color-stone-bg);
+}
+
+.showcase-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.product-grid-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 4.5rem;
+  align-items: start;
+}
+
+/* Left Gallery Column */
+.product-gallery-column {
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.main-image-stage {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-subtle);
+}
+
+.gallery-edition-pill {
+  display: none !important;
+}
+
+.gallery-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.25s ease, transform 0.4s ease;
+}
+
+/* 7 Official Studio Thumbnails Row */
+.gallery-thumbs-row {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.thumb-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.thumb-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.thumb-name {
+  font-size: 0.48rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-charcoal-muted);
+  white-space: nowrap;
+}
+
+.thumb-card:hover,
+.thumb-card.active {
+  border-color: #000000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.thumb-card.active .thumb-name {
+  color: #000000;
+}
+
+/* Right Details Column */
+.product-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product-header-block {
+  border-bottom: 1px solid var(--color-stone-border);
+  padding-bottom: 1.5rem;
+}
+
+.product-category-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.product-category-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  color: var(--color-charcoal-muted);
+  text-transform: uppercase;
+}
+
+.product-rating-stars {
+  font-size: 0.75rem;
+  color: #111111;
+  font-weight: 600;
+}
+
+.rating-count {
+  font-size: 0.68rem;
+  color: var(--color-charcoal-muted);
+  font-weight: 400;
+  margin-left: 0.3rem;
+}
+
+.product-main-title {
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-charcoal);
+  margin-bottom: 0.8rem;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.product-price-val {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+}
+
+.tax-shipping-note {
+  font-size: 0.72rem;
+  color: var(--color-charcoal-muted);
+}
+
+/* Sensorial Notes Box (Salt & Stone Signature) */
+.material-notes-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.notes-header-tag {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--color-oxblood);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1.5rem;
+}
+
+.note-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.note-key {
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: var(--color-charcoal-faint);
+  text-transform: uppercase;
+}
+
+.note-val {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.note-desc {
+  font-size: 0.74rem;
+  color: var(--color-charcoal-muted);
+  line-height: 1.45;
+}
+
+/* Buy Box: Quantity & Add to Bag */
+.buy-box-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.qty-and-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-pill);
+  height: 52px;
+  width: 120px;
+  padding: 0 0.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+  border-radius: 50%;
+  transition: background-color var(--transition-fast);
+}
+
+.qty-btn:hover {
+  background-color: var(--color-stone-warm);
+}
+
+.qty-display {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.btn-add-to-bag {
+  flex: 1;
+  height: 52px;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.btn-add-to-bag:hover {
+  background-color: #282828;
+}
+
+.allocation-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-charcoal-muted);
+}
+
+.stock-status-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #25d366;
+  border-radius: 50%;
+}
+
+/* Accordions (Salt & Stone Style) */
+.product-accordions {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-stone-border);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-stone-border);
+}
+
+.accordion-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+}
+
+.summary-icon {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--color-charcoal-muted);
+  transition: transform var(--transition-fast);
+}
+
+.accordion-item[open] .summary-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  padding-bottom: 1.4rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--color-charcoal-muted);
+}
+
+.accordion-specs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.accordion-specs-list li strong {
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   7. Salt & Stone 4-Quadrant Architecture Grid
+   ========================================================================== */
+.architecture-section {
+  padding: 6rem 2.5rem;
+  background-color: var(--color-stone-warm);
+  border-top: 1px solid var(--color-stone-border);
+  border-bottom: 1px solid var(--color-stone-border);
+}
+
+.section-container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.section-header-centered {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-tag-pill {
+  display: inline-block;
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-oxblood);
+}
+
+.section-heading-large {
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+  line-height: 1.15;
+}
+
+.section-subheading {
+  font-size: 0.95rem;
+  color: var(--color-charcoal-muted);
+  line-height: 1.6;
+}
+
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.arch-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-card);
+  padding: 2.2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-subtle);
+}
+
+.arch-card:hover {
+  transform: translateY(-4px);
+  border-color: #000000;
+  box-shadow: var(--shadow-medium);
+}
+
+.arch-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.arch-num {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+}
+
+.arch-tag {
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-oxblood);
+  background: var(--color-oxblood-tint);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
+
+.arch-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-charcoal);
+}
+
+.arch-sub {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: var(--color-charcoal-faint);
+  text-transform: uppercase;
+}
+
+.arch-desc {
+  font-size: 0.86rem;
+  color: var(--color-charcoal-muted);
+  line-height: 1.6;
+  margin-top: 0.4rem;
+}
+
+/* Architectural Specification Blueprint Showcase */
+.arch-schematic-wrap {
+  margin-top: 3.5rem;
+  width: 100%;
+}
+
+.arch-schematic-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+  box-shadow: var(--shadow-subtle);
+  overflow: hidden;
+}
+
+.arch-schematic-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: #000000;
+  color: #FFFFFF;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+.arch-schematic-img {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.arch-schematic-caption {
+  margin-top: 1.25rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--color-charcoal-muted);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   8. Salt & Stone Split Editorial Manifesto
+   ========================================================================== */
+.manifesto-split-section {
+  padding: 0;
+  background-color: var(--color-stone-bg);
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+
+.split-image-col {
+  position: relative;
+  overflow: hidden;
+  background-color: #120307;
+}
+
+.split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split-badge-overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(0, 0, 0, 0.75);
+  color: #FFFFFF;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+.split-content-col {
+  padding: clamp(3rem, 6vw, 6rem) clamp(2.5rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.split-heading {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-charcoal);
+}
+
+.split-quote {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--color-charcoal);
+  border-left: 2px solid var(--color-oxblood);
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.split-author {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: var(--color-charcoal-muted);
+  text-transform: uppercase;
+}
+
+.split-paragraph {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-charcoal-muted);
+}
+
+.split-pillars-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-stone-border);
+}
+
+.pillar-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pillar-mini strong {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+}
+
+.pillar-mini span {
+  font-size: 0.75rem;
+  color: var(--color-charcoal-muted);
+}
+
+.split-cta-wrap {
+  margin-top: 1rem;
+}
+
+/* ==========================================================================
+   9. Salt & Stone Style Private Reservation Section
+   ========================================================================== */
+.invitation-section {
+  padding: 6rem 2.5rem;
+  background-color: var(--color-stone-warm);
+}
+
+.invitation-card-salt {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-card);
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(2rem, 4vw, 3.5rem);
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.invitation-heading {
+  font-size: clamp(2rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 1.25rem 0 0.8rem;
+  color: var(--color-charcoal);
+}
+
+.invitation-sub {
+  font-size: 0.95rem;
+  color: var(--color-charcoal-muted);
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+}
+
+.invitation-form-salt {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.form-row-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+}
+
+.input-field-salt {
+  width: 100%;
+  height: 50px;
+  background: var(--color-stone-bg);
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-sm);
+  padding: 0 1.2rem;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--color-charcoal);
+  outline: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.input-field-salt:focus {
+  border-color: #000000;
+  background: #FFFFFF;
+}
+
+.select-field-salt {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.btn-submit-invitation {
+  width: 100%;
+  height: 52px;
+  margin-top: 0.5rem;
+}
+
+.form-feedback-status {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-oxblood);
+  text-align: center;
+  min-height: 1.2rem;
+}
+
+.invitation-guarantee-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--color-charcoal-muted);
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-stone-border-light);
+}
+
+/* ==========================================================================
+   10. Salt & Stone Signature Slide-Out Cart Drawer
+   ========================================================================== */
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cart-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 440px;
+  height: 100vh;
+  height: 100dvh;
+  background: #FFFFFF;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+.cart-drawer-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.drawer-header {
+  padding: 1.5rem 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-stone-border);
+}
+
+.drawer-header-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.drawer-title-main {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-charcoal);
+}
+
+.drawer-items-count {
+  font-size: 0.72rem;
+  color: var(--color-charcoal-muted);
+  font-weight: 500;
+}
+
+.drawer-close-btn {
+  font-size: 1.8rem;
+  color: var(--color-charcoal);
+  line-height: 1;
+  padding: 0 0.5rem;
+  transition: transform var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Shipping Progress Bar */
+.drawer-shipping-meter {
+  background: var(--color-stone-warm);
+  padding: 0.9rem 1.8rem;
+  border-bottom: 1px solid var(--color-stone-border);
+}
+
+.meter-text {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.meter-check {
+  color: #25d366;
+  font-weight: 800;
+}
+
+.meter-bar {
+  height: 4px;
+  background: var(--color-stone-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  background: #000000;
+  border-radius: 999px;
+}
+
+/* Drawer Items List */
+.drawer-items-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cart-item-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-stone-border-light);
+}
+
+.cart-item-thumb {
+  width: 80px;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-stone-warm);
+  border: 1px solid var(--color-stone-border);
+}
+
+.cart-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cart-item-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  letter-spacing: 0.02em;
+}
+
+.cart-item-edition {
+  font-size: 0.68rem;
+  color: var(--color-oxblood);
+  font-weight: 600;
+}
+
+.cart-item-price-calc {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-top: 0.2rem;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+
+.drawer-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--color-stone-bg);
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.6rem;
+}
+
+.drawer-stepper button {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.drawer-stepper span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.btn-remove-item {
+  font-size: 0.68rem;
+  text-decoration: underline;
+  color: var(--color-charcoal-muted);
+  cursor: pointer;
+}
+
+.btn-remove-item:hover {
+  color: var(--color-oxblood);
+}
+
+/* Drawer Footer */
+.drawer-footer-block {
+  padding: 1.5rem 1.8rem;
+  background: var(--color-stone-bg);
+  border-top: 1px solid var(--color-stone-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.drawer-subtotal-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subtotal-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-charcoal);
+}
+
+.subtotal-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.drawer-shipping-disclaimer {
+  font-size: 0.72rem;
+  color: var(--color-charcoal-muted);
+}
+
+.drawer-actions-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-checkout-main {
+  width: 100%;
+  height: 50px;
+}
+
+.btn-link-bag-page {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.drawer-security-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--color-charcoal-muted);
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+/* Modal Dialog */
+.checkout-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.checkout-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.checkout-modal-box {
+  background: #FFFFFF;
+  border-radius: var(--radius-card);
+  max-width: 540px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: var(--shadow-floating);
+}
+
+.btn-close-modal {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--color-charcoal-muted);
+}
+
+.modal-badge-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-oxblood);
+  text-transform: uppercase;
+}
+
+.modal-heading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0.5rem 0 0.8rem;
+}
+
+.modal-subtext {
+  font-size: 0.86rem;
+  color: var(--color-charcoal-muted);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.checkout-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.order-preview-mini {
+  background: var(--color-stone-warm);
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.btn-modal-confirm {
+  width: 100%;
+  height: 52px;
+}
+
+/* ==========================================================================
+   11. Salt & Stone Minimalist Luxury Footer
+   ========================================================================== */
+.site-footer {
+  background-color: #0E0206;
+  color: #FFFFFF;
+  padding: 5.5rem 2.5rem 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 3.5rem;
+}
+
+.footer-col-dispatch {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-col-heading {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.footer-col-text {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-newsletter-form {
+  margin-top: 0.5rem;
+}
+
+.footer-input-wrap {
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+}
+
+.footer-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.82rem;
+  color: #FFFFFF;
+  font-family: inherit;
+}
+
+.footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-submit-btn {
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: var(--radius-pill);
+  padding: 0.6rem 1.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+}
+
+.footer-submit-btn:hover {
+  background: var(--color-stone-warm);
+}
+
+.footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-col-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col-links a {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-fast);
+}
+
+.footer-col-links a:hover {
+  color: #FFFFFF;
+}
+
+/* Center Giant Brandmark */
+.footer-brand-hero {
+  text-align: center;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.95;
+}
+
+.footer-brand-name {
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-right: -0.28em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.footer-brand-by {
+  font-size: clamp(0.7rem, 2vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  margin-right: -0.38em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.5rem;
+}
+
+/* Footer Bottom Row */
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-legal-links a:hover {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   12. Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .product-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .product-gallery-column {
+    position: static;
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .split-image-col {
+    min-height: 420px;
+  }
+
+  .architecture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .announcement-bar {
+    font-size: 0.58rem;
+    padding: 0 0.75rem;
+    height: 36px;
+  }
+
+  .announcement-inner {
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .announcement-badge {
+    display: none;
+  }
+
+  .announcement-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+  }
+
+  .announcement-cta {
+    font-size: 0.56rem;
+    flex-shrink: 0;
+  }
+
+  .gallery-thumbs-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .thumb-card {
+    flex: 0 0 72px;
+    scroll-snap-align: start;
+    padding: 0.25rem;
+  }
+
+  .thumb-name {
+    display: none;
+  }
+
+  .site-header {
+    height: 56px;
+  }
+
+  .header-inner {
+    width: 100%;
+    padding: 0 1.25rem;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+  }
+
+  .header-nav-left {
+    display: none !important;
+  }
+
+  .header-brand-wrap {
+    text-align: left;
+    flex-shrink: 0;
+  }
+
+  .currency-tag {
+    display: none !important;
+  }
+
+  .header-utility {
+    display: flex !important;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .header-cart-btn {
+    display: inline-flex !important;
+    padding: 0.4rem 0.9rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  .hero-stage {
+    padding: 3rem 1.25rem;
+    min-height: 540px;
+    height: auto;
+  }
+
+  .hero-editorial-card {
+    gap: 1.2rem;
+  }
+
+  .hero-btn-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-pill-solid, .btn-pill-ghost {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  .product-showcase-section,
+  .architecture-section,
+  .invitation-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .form-row-two,
+  .modal-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split-pillars-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .announcement-bar {
+    font-size: 0.54rem;
+    padding: 0 0.5rem;
+    height: 32px;
+  }
+  .announcement-inner {
+    gap: 0.35rem;
+    max-width: 100%;
+  }
+  .announcement-text {
+    font-size: 0.5rem;
+  }
+  .announcement-cta {
+    font-size: 0.5rem;
+  }
+
+  .site-header {
+    height: 52px;
+  }
+  .header-inner {
+    padding: 0 0.85rem;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+  }
+  .header-brand-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.2em;
+  }
+  .header-brand-sub {
+    font-size: 0.46rem;
+    letter-spacing: 0.22em;
+  }
+  .header-cart-btn {
+    padding: 0.35rem 0.75rem !important;
+    font-size: 0.6rem !important;
+    gap: 0.35rem;
+  }
+
+  .hero-stage {
+    padding: 2.5rem 1rem;
+    min-height: 500px;
+  }
+  .hero-headline {
+    font-size: clamp(2rem, 8vw, 2.7rem);
+    letter-spacing: 0.1em;
+  }
+  .hero-lead {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+  .btn-pill-solid, .btn-pill-ghost {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.06em;
+  }
+  .hero-trust-strip {
+    font-size: 0.58rem;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+
+  .architecture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-thumbs-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0.4rem;
+    padding-bottom: 0.4rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .qty-and-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .qty-stepper {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   13. Dedicated Cart Page (cart.html) — Salt & Stone Aesthetics
+   ========================================================================== */
+.cart-page-body {
+  background-color: var(--color-stone-bg);
+  min-height: 100vh;
+}
+
+.cart-main-container {
+  padding: 4.5rem 2.5rem 6rem;
+}
+
+.cart-page-header {
+  margin-bottom: 3.5rem;
+  max-width: 720px;
+}
+
+.cart-page-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+  margin: 0.8rem 0;
+}
+
+.cart-page-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-charcoal-muted);
+  line-height: 1.6;
+}
+
+.cart-content-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.cart-table-head {
+  display: grid;
+  grid-template-columns: 80px 1.5fr 1fr 1fr;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-stone-border);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--color-charcoal-muted);
+  text-transform: uppercase;
+}
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-table-row {
+  display: grid;
+  grid-template-columns: 80px 1.5fr 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--color-stone-border-light);
+}
+
+.cart-table-thumb {
+  width: 80px;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+}
+
+.cart-table-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-table-info h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.cart-table-edition {
+  font-size: 0.72rem;
+  color: var(--color-oxblood);
+  font-weight: 600;
+}
+
+.cart-table-price-unit {
+  font-size: 0.82rem;
+  color: var(--color-charcoal-muted);
+}
+
+.cart-table-total {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.cart-guarantee-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-stone-border);
+}
+
+.guarantee-item {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-charcoal-muted);
+}
+
+.guarantee-icon {
+  color: var(--color-oxblood);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.guarantee-item strong {
+  color: var(--color-charcoal);
+}
+
+/* Summary Box */
+.summary-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-card);
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-subtle);
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+}
+
+.summary-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-stone-border);
+  padding-bottom: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  color: var(--color-charcoal-muted);
+}
+
+.summary-val {
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+.highlight-free {
+  color: #25d366;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+}
+
+.promo-box {
+  margin: 0.5rem 0;
+}
+
+.promo-input-wrap {
+  display: flex;
+  background: var(--color-stone-bg);
+  border: 1px solid var(--color-stone-border);
+  border-radius: var(--radius-pill);
+  padding: 3px;
+}
+
+.promo-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: var(--color-charcoal);
+}
+
+.promo-btn {
+  background: #000000;
+  color: #FFFFFF;
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.promo-feedback {
+  font-size: 0.72rem;
+  margin-top: 0.4rem;
+  min-height: 1rem;
+}
+
+.promo-feedback.success { color: #25d366; }
+.promo-feedback.error { color: #c02a2a; }
+
+.summary-divider {
+  height: 1px;
+  background: var(--color-stone-border);
+}
+
+.summary-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.total-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-charcoal);
+}
+
+.total-val {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+.btn-checkout-primary {
+  width: 100%;
+  height: 52px;
+  background: #000000;
+  color: #FFFFFF;
+}
+
+.summary-secure-note {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-charcoal-muted);
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .cart-content-layout {
+    grid-template-columns: 1fr;
+  }
+  .cart-table-head {
+    display: none;
+  }
+  .cart-table-row {
+    grid-template-columns: 70px 1fr;
+    gap: 1rem;
+  }
+  .cart-guarantee-strip {
+    grid-template-columns: 1fr;
+  }
+}
